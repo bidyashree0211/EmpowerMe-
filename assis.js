@@ -26,8 +26,13 @@ function wishMe() {
 
 window.addEventListener("load", () => {
   speak("hey! i am motherbee");
-  speak("and i am here to assist on maternal care");
+  speak("and i am here to help with maternal care");
   wishMe();
+    let p = document.createElement("p");
+   p = document.createElement("p");
+      p.classList.add("replay");
+      p.innerText = "Hey! i am motherbee and i am here to assist on maternal care";
+      texts.appendChild(p);
 });
 
 window.SpeechRecognition =
@@ -59,7 +64,7 @@ recognition.addEventListener("result", (e) => {
      ) {
       p = document.createElement("p");
       p.classList.add("replay");
-      p.innerText = "My Name is Empower";
+      p.innerText = "My Name is MotherBee";
       texts.appendChild(p);
 speak(p.innerText);
     }
@@ -89,6 +94,23 @@ speak(p.innerText);
       texts.appendChild(p);
     speak(p.innerText);
     }
+    if (text.includes("travel")&& text.includes("pregnancy")) ) {
+      p = document.createElement("p");
+      p.classList.add("replay");
+      p.innerText =
+        "In many cases, it's safe to travel during pregnancy, especially in the early and middle stages. However, it's crucial to discuss travel plans with your healthcare provider, especially if you're at risk for complications";
+      texts.appendChild(p);
+    speak(p.innerText);
+    }
+
+    if (text.includes("prenatal tests")&&text.includes("tests") && text.includes("pregnancy")) {
+      p = document.createElement("p");
+      p.classList.add("replay");
+      p.innerText =
+        "Routine prenatal tests include blood tests, ultrasounds, and screenings for conditions like gestational diabetes. Your healthcare provider will recommend specific tests based on your health and medical history";
+      texts.appendChild(p);
+    speak(p.innerText);
+    }
     
   }
 });
@@ -97,5 +119,5 @@ recognition.addEventListener("end", () => {
   recognition.start();
    p = document.createElement("p");
 });
+setTimeout(recognition.start(),3000);
 
-recognition.start();
